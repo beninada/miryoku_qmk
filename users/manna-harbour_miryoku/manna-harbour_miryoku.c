@@ -158,14 +158,6 @@ void oled_render_layer_state(void) {
   oled_write("\n", false);
 }
 
-void oled_render_led_state(void) {
-  led_t led_state = host_keyboard_led_state();
-
-  oled_write(led_state.caps_lock ? "CAPS " : "      ", false);
-  oled_write(led_state.scroll_lock ? "SCROLL " : "       ", false);
-  oled_write("\n", false);
-}
-
 void oled_render_mod_state(void) {
   uint8_t mod_state = get_mods();
 
