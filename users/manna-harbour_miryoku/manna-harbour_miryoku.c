@@ -184,7 +184,6 @@ bool oled_task_user(void) {
   if (is_keyboard_master()) {
     oled_render_layer_state();
     oled_render_mod_state();
-    oled_render_led_state();
   } else {
     oled_render_logo();
   }
