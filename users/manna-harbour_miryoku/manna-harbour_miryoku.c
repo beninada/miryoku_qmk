@@ -119,34 +119,38 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   return rotation;
 }
 
-enum layers { BASE, BUTTON, MEDIA, NAV, MOUSE, SYM, NUM, FUN };
-
 void oled_render_layer_state(void) {
   oled_write("Layer: ", false);
 
   switch (get_highest_layer(layer_state)) {
-  case BASE:
+  case U_BASE:
     oled_write("Base", false);
     break;
-  case BUTTON:
+  case U_EXTRA:
+    oled_write("Extra", false);
+    break;
+  case U_TAP:
+    oled_write("Tap", false);
+    break;
+  case U_BUTTON:
     oled_write("Button", false);
     break;
-  case MEDIA:
-    oled_write("Media", false);
-    break;
-  case NAV:
+  case U_NAV:
     oled_write("Navigation", false);
     break;
-  case MOUSE:
+  case U_MOUSE:
     oled_write("Mouse", false);
     break;
-  case SYM:
-    oled_write("Symbol", false);
+  case U_MEDIA:
+    oled_write("Media", false);
     break;
-  case NUM:
+  case U_NUM:
     oled_write("Number", false);
     break;
-  case FUN:
+  case U_SYM:
+    oled_write("Symbol", false);
+    break;
+  case U_FUN:
     oled_write("Function", false);
     break;
   }
