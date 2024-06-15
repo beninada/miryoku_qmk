@@ -90,11 +90,13 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 #endif
 
+// Ben's customizations below
+
 #ifdef ENCODER_ENABLE
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
-        if (clockwise) {
+        if (!clockwise) {   // Flipped intentionally for my Sofle as it seems like my encoder was installed reversed
             tap_code(KC_VOLU);
         } else {
             tap_code(KC_VOLD);
